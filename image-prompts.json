@@ -1,0 +1,37 @@
+[
+  {
+    "business_name": "19 Cafe Bar",
+    "slug": "19-cafe-bar",
+    "prompt": "Generic non-branded hero image for a local restaurant preview page in Manchester, UK: cozy cafe brunch table, coffee, pastries. No logos, no readable text, no identifiable storefront, no people faces, no trademarked brand assets. Clean professional small-business website hero, warm natural light, appetizing but generic, 16:9 composition.",
+    "target_asset": "assets/merchant/19-cafe-bar-hero.png",
+    "status": "pending_gpt_image_2_backend"
+  },
+  {
+    "business_name": "Buffet City",
+    "slug": "buffet-city",
+    "prompt": "Generic non-branded hero image for a local restaurant preview page in Manchester, UK: Chinese restaurant table setting, sharing plates, warm dining ambiance. No logos, no readable text, no identifiable storefront, no people faces, no trademarked brand assets. Clean professional small-business website hero, warm natural light, appetizing but generic, 16:9 composition.",
+    "target_asset": "assets/merchant/buffet-city-hero.png",
+    "status": "pending_gpt_image_2_backend"
+  },
+  {
+    "business_name": "Bullgogi",
+    "slug": "bullgogi",
+    "prompt": "Generic non-branded hero image for a local restaurant preview page in Manchester, UK: modern Korean restaurant table setting, warm dishes, casual dining. No logos, no readable text, no identifiable storefront, no people faces, no trademarked brand assets. Clean professional small-business website hero, warm natural light, appetizing but generic, 16:9 composition.",
+    "target_asset": "assets/merchant/bullgogi-hero.png",
+    "status": "pending_gpt_image_2_backend"
+  },
+  {
+    "business_name": "Don Giovanni's",
+    "slug": "don-giovanni-s",
+    "prompt": "Generic non-branded hero image for a local restaurant preview page in Manchester, UK: Italian trattoria table setting, pasta, warm restaurant ambiance. No logos, no readable text, no identifiable storefront, no people faces, no trademarked brand assets. Clean professional small-business website hero, warm natural light, appetizing but generic, 16:9 composition.",
+    "target_asset": "assets/merchant/don-giovanni-s-hero.png",
+    "status": "pending_gpt_image_2_backend"
+  },
+  {
+    "business_name": "Han Dynasty",
+    "slug": "han-dynasty",
+    "prompt": "Generic non-branded hero image for a local restaurant preview page in Manchester, UK: Chinese restaurant table setting, sharing plates, warm dining ambiance. No logos, no readable text, no identifiable storefront, no people faces, no trademarked brand assets. Clean professional small-business website hero, warm natural light, appetizing but generic, 16:9 composition.",
+    "target_asset": "assets/merchant/han-dynasty-hero.png",
+    "status": "pending_gpt_image_2_backend"
+  }
+]
