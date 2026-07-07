@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchard Street Florist demo landing page</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #5d6973;
+      --paper: #f7fbf8;
+      --accent: #2563eb;
+      --accent-strong: #1f3f7a;
+      --line: #d7d8d2;
+      --warm: #f0b85a;
+      --soft: #d7eadc;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+    header {
+      min-height: 70vh;
+      display: grid;
+      align-items: center;
+      padding: 48px 24px;
+      background:
+        linear-gradient(115deg, rgba(23,32,38,.91), rgba(23,32,38,.64)),
+        radial-gradient(circle at 82% 18%, var(--warm), transparent 26%),
+        linear-gradient(135deg, var(--accent-strong), var(--accent));
+      color: white;
+    }
+    .wrap { width: min(1040px, 100%); margin: 0 auto; }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .demo-label {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 4px;
+      font-size: 13px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    .kicker {
+      margin: 0 0 12px;
+      color: rgba(255,255,255,.78);
+      font-weight: 700;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .headline {
+      max-width: 620px;
+      margin: 18px 0 28px;
+      font-size: 20px;
+      color: rgba(255,255,255,.88);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    a.button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .primary { background: var(--warm); color: #1f160b; }
+    .secondary { border: 1px solid rgba(255,255,255,.65); color: white; }
+    .hero-card {
+      border: 1px solid rgba(255,255,255,.34);
+      border-radius: 8px;
+      padding: 18px;
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 22px 60px rgba(0,0,0,.22);
+    }
+    .placeholder-visual {
+      min-height: 260px;
+      border-radius: 6px;
+      border: 1px dashed rgba(255,255,255,.58);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,.06)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.18) 0 1px, transparent 1px 34px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 1px, transparent 1px 34px);
+      display: grid;
+      align-items: end;
+      padding: 16px;
+    }
+    .placeholder-visual span {
+      display: inline-block;
+      width: fit-content;
+      border-radius: 4px;
+      padding: 6px 9px;
+      background: rgba(23,32,38,.58);
+      color: rgba(255,255,255,.9);
+      font-size: 13px;
+    }
+    main { padding: 32px 24px 56px; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 7px 10px;
+      background: var(--card);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+      overflow: hidden;
+    }
+    .thumbnail {
+      height: 150px;
+      background:
+        linear-gradient(135deg, var(--accent), var(--warm)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.28) 0 10px, transparent 10px 20px);
+      display: grid;
+      place-items: center;
+    }
+    .thumbnail span {
+      width: 54px;
+      height: 54px;
+      border: 2px solid rgba(255,255,255,.86);
+      border-radius: 50%;
+      box-shadow: 18px 0 0 -10px rgba(255,255,255,.64), -18px 0 0 -10px rgba(255,255,255,.64);
+    }
+    .panel h2 { margin: 16px 16px 6px; font-size: 20px; }
+    .panel p { margin: 0 16px 18px; color: var(--muted); }
+    .notice {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      header { min-height: 68vh; padding: 36px 18px; }
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .headline { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero-layout">
+      <div>
+        <span class="demo-label">Demo template - not merchant approved</span>
+        <p class="kicker">Sample request demo</p>
+        <h1>Orchard Street Florist</h1>
+        <p class="headline">A practical request page for seasonal orders, quotes, delivery, or drop-off jobs.</p>
+        <div class="actions">
+          <a class="button primary" href="#contact">Start a request</a>
+          <a class="button secondary" href="#sections">View placeholder options</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="placeholder-visual">
+          <span>Request form</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <div class="meta">
+        <span>Dublin, Ireland</span>
+        <span>Florist</span>
+        <span>Florist / Repair variant</span>
+        <span>Human-approved copy required before use</span>
+      </div>
+      <section id="sections" class="grid">
+        
+        <article class="panel">
+          <div class="thumbnail" aria-hidden="true">
+            <span></span>
+          </div>
+          <h2>Placeholder order or service options</h2>
+          <p>Replace with approved bouquet ranges, repair categories, lead times, and quote requirements.</p>
+        </article>
+        <article class="panel">
+          <div class="thumbnail" aria-hidden="true">
+            <span></span>
+          </div>
+          <h2>Local delivery or drop-off</h2>
+          <p>Use confirmed delivery zones, pickup windows, workshop intake rules, or service-area details.</p>
+        </article>
+        <article class="panel">
+          <div class="thumbnail" aria-hidden="true">
+            <span></span>
+          </div>
+          <h2>Quote-ready details</h2>
+          <p>Prompt customers for event dates, item condition, budget range, or callback preferences.</p>
+        </article>
+      </section>
+      <p id="contact" class="notice">
+        This file is a generic demo for internal review. Replace placeholder text only after the merchant agrees to personalization.
+      </p>
+    </div>
+  </main>
+</body>
+</html>

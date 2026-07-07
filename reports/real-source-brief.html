@@ -1,0 +1,172 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>real-source-brief</title><style>
+body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:0 auto;padding:32px;background:#f8fafc;color:#111827;line-height:1.55}h1{font-size:34px}h2{margin-top:32px;border-top:1px solid #e5e7eb;padding-top:20px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #d1d5db;padding:8px;text-align:left;vertical-align:top}th{background:#eef2ff}code,pre{background:#111827;color:#f9fafb;border-radius:6px}code{padding:2px 4px}pre{padding:14px;overflow:auto}.note{background:#fff7ed;border:1px solid #fed7aa;padding:12px;border-radius:8px;margin-bottom:18px}
+</style></head><body><div class="note">预览版：由 Markdown 转成 HTML，方便 Telegram/浏览器查看。</div><h1>OPC 真实线索接入简报 - Manchester 餐厅/咖啡</h1>
+<p>日期：2026-07-07
+数据源：OpenStreetMap / Nominatim / Overpass（公开数据）
+范围：Manchester Piccadilly 周边 1.2km，restaurant + cafe</p>
+<h2>执行结果</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align: right;">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始候选抓取</td>
+<td style="text-align: right;">restaurant/cafe 各 30 条以内</td>
+</tr>
+<tr>
+<td>过滤后真实候选</td>
+<td style="text-align: right;">20 条</td>
+</tr>
+<tr>
+<td>输出 CSV</td>
+<td style="text-align: right;"><code>data/real-osm-manchester-restaurants.csv</code></td>
+</tr>
+<tr>
+<td>原始 JSON</td>
+<td style="text-align: right;"><code>data/raw-osm-manchester-restaurants.json</code></td>
+</tr>
+<tr>
+<td>评分结果</td>
+<td style="text-align: right;"><code>reports/real-osm-manchester-scored.csv</code></td>
+</tr>
+<tr>
+<td>真实日报</td>
+<td style="text-align: right;"><code>reports/real-osm-manchester-daily-report.md</code></td>
+</tr>
+<tr>
+<td>新生成 Demo</td>
+<td style="text-align: right;">3 个</td>
+</tr>
+<tr>
+<td>自动外联</td>
+<td style="text-align: right;">0 条，未发送</td>
+</tr>
+</tbody>
+</table>
+<h2>Top 10 候选</h2>
+<p>注意：这些是 <strong>OSM 公开数据发现候选</strong>，不是已经人工核验的销售名单。<code>无网站</code>表示 OSM 条目未列 website tag，不等于确定商家没有官网。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Rank</th>
+<th>商家</th>
+<th style="text-align: right;">分数</th>
+<th>机会点</th>
+<th>下一步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>19 Cafe Bar</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；餐厅/咖啡早午餐定位</td>
+<td>人工查官网/菜单/订餐页</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Buffet City</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；餐饮询价/菜单页可能适配</td>
+<td>人工查官网与营业状态</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Bullgogi</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；韩餐菜单页可能适配</td>
+<td>人工查官网/Google profile</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Don Giovanni's</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；意餐菜单/预订页可能适配</td>
+<td>人工查是否已有官网</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Han Dynasty</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；餐饮菜单页可能适配</td>
+<td>人工查官网与评价</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>One+</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；餐饮菜单页可能适配</td>
+<td>人工查官网与评价</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Phetpailin Thai</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；泰餐菜单页可能适配</td>
+<td>人工查官网与评价</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Red Chili</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；餐饮菜单页可能适配</td>
+<td>人工查官网与评价</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>Samsi</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；日餐菜单页可能适配</td>
+<td>人工查官网与评价</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Sweet Mandarin</td>
+<td style="text-align: right;">72</td>
+<td>OSM 未列官网；餐饮菜单页可能适配</td>
+<td>人工查官网与评价</td>
+</tr>
+</tbody>
+</table>
+<h2>已生成通用 Demo</h2>
+<table>
+<thead>
+<tr>
+<th>商家</th>
+<th>Demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19 Cafe Bar</td>
+<td><code>demos/19-cafe-bar-restaurant.html</code></td>
+</tr>
+<tr>
+<td>Buffet City</td>
+<td><code>demos/buffet-city-restaurant.html</code></td>
+</tr>
+<tr>
+<td>Bullgogi</td>
+<td><code>demos/bullgogi-restaurant.html</code></td>
+</tr>
+</tbody>
+</table>
+<h2>合规结论</h2>
+<ul>
+<li>当前只完成真实公开数据接入和本地分析，没有自动联系任何商家。</li>
+<li>OSM 不含评分/评论量，因此不能直接判断需求强度；需要二次人工核验 Google/官网/社媒。</li>
+<li>禁止直接群发。首次联系必须由用户确认。</li>
+<li>Demo 仍是通用模板，不使用商家 logo、真实图片、菜单、品牌素材。</li>
+<li>下一阶段应补一个“人工核验表”：官网状态、Google 评分/评论数、是否独立商家、是否可联系、是否 opt-out。</li>
+</ul>
+<h2>下一步建议</h2>
+<ol>
+<li>先人工核验 Top 10 的官网/Google Profile。</li>
+<li>把确认没有官网或 CTA 弱的商家标记为 <code>verified_gap=true</code>。</li>
+<li>只对 Top 3 生成更精细 demo。</li>
+<li>你确认后，再准备人工发送版外联文案。</li>
+</ol></body></html>
