@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OPC 模型分工建议 — GPT-5.6 系列</title>
+  <style>
+    :root{--ink:#172033;--muted:#64748b;--paper:#fbf8f2;--card:#fff;--accent:#5b35da;--good:#166534;--hold:#92400e}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 0 0,#eee7ff,transparent 35%),var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",Arial,sans-serif;line-height:1.65}
+    main{width:min(1040px,calc(100% - 32px));margin:42px auto 72px} h1{font-size:clamp(34px,6vw,56px);line-height:1.08;letter-spacing:-2px;margin:0 0 14px} h2{font-size:25px;margin:0 0 12px}.sub{font-size:18px;color:var(--muted);max-width:850px}.banner{margin:28px 0;padding:20px 22px;border-radius:20px;background:#172033;color:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.box{background:var(--card);border:1px solid #e5e7eb;border-radius:20px;padding:22px;box-shadow:0 10px 32px rgba(23,32,51,.06)}.card h2{margin-top:8px}.pill{display:inline-block;border-radius:999px;background:#eee7ff;color:#4c1d95;padding:4px 10px;font-size:13px;font-weight:800}.sol{border-top:5px solid #f59e0b}.terra{border-top:5px solid #5b35da}.luna{border-top:5px solid #0f766e}.section{margin-top:28px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden}th,td{padding:14px 15px;text-align:left;border-bottom:1px solid #e5e7eb;vertical-align:top}th{background:#f1f5f9;font-size:14px}.yes{color:var(--good);font-weight:800}.no{color:#b91c1c;font-weight:800}.quote{border-left:4px solid var(--accent);padding-left:16px;color:#334155}.code{display:block;white-space:pre-wrap;background:#111827;color:#e5e7eb;border-radius:14px;padding:16px;font:13px ui-monospace,SFMono-Regular,Menlo,monospace}@media(max-width:760px){.grid{grid-template-columns:1fr}main{margin-top:26px}th,td{min-width:145px}}
+  </style>
+</head>
+<body><main>
+  <span class="pill">OPC · 2026-07-11 · configuration analysis</span>
+  <h1>GPT‑5.6 三模型分工建议</h1>
+  <p class="sub">目标：给当前海外本地商家获客 / demo / 外联工作分配更合适的模型，同时<strong>不触碰默认 profile、飞书、企业微信或微信的现有路由</strong>。</p>
+
+  <div class="banner"><strong>结论：</strong>不需要改 <code>default</code>。现有 OPC profiles 已经天然隔离：<code>opc-ceo</code> 用 Sol、<code>opc-sales</code> 用 Terra、<code>opc-worker</code> 用 Luna。后续只在这些 profile 或其 cron job 里按任务指定模型即可。</div>
+
+  <section class="section"><h2>三个模型：已知配置 + 同题实测</h2><div class="grid">
+    <article class="card sol"><span class="pill">gpt-5.6-sol</span><h2>Sol：决策与策略</h2><p><b>现有配置：</b><code>opc-ceo</code></p><p><b>同题表现：</b>最简洁地指出 offer、外联角度与“对方可能已有隐藏预约工具”的验证风险。</p><p><b>建议工作：</b>地区/行业取舍、ICP 定义、报价、offer 设计、是否继续推进某一商家。</p><p><b>不建议：</b>大量低价值候选整理、机械抓取、逐家生成代码。</p></article>
+    <article class="card terra"><span class="pill">gpt-5.6-terra</span><h2>Terra：主力交付</h2><p><b>现有配置：</b><code>default</code>、<code>opc-sales</code> 及多名 OPC worker</p><p><b>同题表现：</b>给出最完整的 booking funnel offer、明确 CTA（包含 deposit / WhatsApp）和询盘前验证条件。</p><p><b>建议工作：</b>商家复核、官网/社媒分析、demo 文案、外联草稿、落地页/代码实施、交付 QA。</p><p><b>不建议：</b>改 default 来给其他平台“强行统一”。</p></article>
+    <article class="card luna"><span class="pill">gpt-5.6-luna</span><h2>Luna：低成本初筛</h2><p><b>现有配置：</b><code>opc-worker</code>，low reasoning，terminal/messaging 已禁用</p><p><b>同题表现：</b>能完成基础 offer/风险判断，额外提醒合规；整体更适合规则明确、可复核的任务。</p><p><b>建议工作：</b>候选分类、去重、字段补全、官网/社媒初筛、机会评分、生成待人工审核队列。</p><p><b>不建议：</b>最终商家外联、报价、重要策略或未经审核的公开内容。</p></article>
+  </div></section>
+
+  <section class="section"><h2>当前 OPC 推荐流水线</h2><div class="table-wrap"><table><thead><tr><th>阶段</th><th>负责 profile / 模型</th><th>输出</th><th>是否能直接对外发送</th></tr></thead><tbody>
+    <tr><td>1. 候选发现与结构化</td><td><code>opc-worker</code> · Luna</td><td>候选清单、去重、公开联系渠道、初步评分</td><td class="no">不能</td></tr>
+    <tr><td>2. 商机判断</td><td><code>opc-ceo</code> · Sol</td><td>是否值得做 demo、核心痛点、报价/offer</td><td class="no">不能</td></tr>
+    <tr><td>3. Demo / 文案 / 外联草稿</td><td><code>opc-sales</code> · Terra</td><td>落地页 brief、英文邮件、contact-form 文案、跟进方案</td><td class="no">不能</td></tr>
+    <tr><td>4. 最终审稿</td><td><code>opc-reviewer</code> · Claude Sonnet 5</td><td>事实、品牌、合规、CTA 与拼写检查</td><td class="no">不能</td></tr>
+    <tr><td>5. 人工批准后发送</td><td>当前主会话 / approved send</td><td>单家发送、状态记录、回复跟进</td><td class="yes">仅在你明确批准后</td></tr>
+  </tbody></table></div></section>
+
+  <section class="section"><h2>隔离原则：不会影响飞书、企业微信、微信</h2><div class="box">
+    <p>Hermes 官方 profile 机制使每个 profile 拥有独立的 <code>config.yaml</code>、<code>.env</code>、memory、sessions、skills 和 gateway state。当前机器也已经有独立的 <code>opc-ceo</code>、<code>opc-sales</code>、<code>opc-worker</code> profiles。</p>
+    <p><strong>本方案不做的事：</strong></p>
+    <ul><li>不改 <code>/home/admin/.hermes/config.yaml</code> 中的 <code>default: gpt-5.6-terra</code></li><li>不改飞书、企业微信、微信的 token、platform 配置或 routing</li><li>不重启默认 gateway</li><li>不把 OPC 的 persona、memory 或任务带进其他平台会话</li></ul>
+    <p><strong>只做的事：</strong>通过 <code>hermes -p opc-ceo …</code>、<code>hermes -p opc-sales …</code>、<code>hermes -p opc-worker …</code> 或给 OPC 专用 cron job 设置 model override 来运行工作任务。</p>
+  </div></section>
+
+  <section class="section"><h2>建议的下一步（仍然零配置改动）</h2><div class="box"><ol><li>Luna 先整理 Salford / Stockport 商家候选，并标记 Google Maps 必须复核项。</li><li>Sol 只判断前 10 家里哪 3 家值得做 demo，避免做一堆没人看的页面。</li><li>Terra 为通过的 3 家做针对性 demo 和外联草稿。</li><li>Reviewer 审核后，仍由你逐家批准发送。</li></ol><p class="quote">注意：Terra / Sol / Luna 是当前 custom provider 暴露的模型标识；本报告的能力判断来自本机实际配置及同一条无工具 prompt 的隔离小测，并不是供应商公开规格或跑分宣传。</p></div></section>
+</main></body></html>
